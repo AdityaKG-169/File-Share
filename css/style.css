@@ -43,18 +43,23 @@
 	font-weight: bold;
 }
 
+a {
+	color: white;
+}
+
 .footer {
 	width: 100%;
 	background-color: black;
 	height: 30px;
 	position: absolute;
 	bottom: 0;
+	display: flex;
 }
 
 .footer>img {
 	position: relative;
 	width: 17px;
-	top: 6px;
 	cursor: pointer;
-	left: 90%;
+	left: 85%;
+	margin-right: 20px;
 }
