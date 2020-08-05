@@ -13,6 +13,7 @@
 		<p id="demo"></p>
 		<p>Open the following link in your other device web browser</p>
 		<p id="ip"></p>
+		<p id="notifs"></p>
 		<script>
 			function myFunction() {
 				var x = document.getElementById("myFile").files[0];
@@ -28,6 +29,12 @@
 						document.getElementById("ip").innerHTML = data;
 					});
 			}
+
+			fetch("https://push-notifications-app.herokuapp.com/notif")
+				.then((response) => response.json())
+				.then((data) => {
+					document.getElementById("notifs").innerHTML = data;
+				});
 		</script>
 	</body>
 </html>
