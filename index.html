@@ -1,19 +1,109 @@
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link href="style.css" rel="stylesheet" />
+	</head>
 	<body>
-		Select a file to upload:
-		<input type="file" id="myFile" size="50" />
+		<body>
+			<div class="heading">
+				<img src="./file-upload-solid.svg" />
+				<h1>FileShare</h1>
+			</div>
+			<p>Choose a file to share</p>
+			<input type="file" id="myFile" size="50" />
+			<hr />
+			<p>Connect at same network to share</p>
+			<button type="button" onclick="myFunction()">Share</button>
+			<p id="demo"></p>
+			<p>Open the following link in your other device web browser</p>
+			<p id="ip"></p>
+			<p id="notifs"></p>
+			<script>
+				function myFunction() {
+					var x = document.getElementById("myFile").files[0];
+					fetch("http://localhost:4707/fileupload", {
+						method: "post",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({
+							filePath: x.path,
+						}),
+					})
+						.then((response) => response.json())
+						.then((data) => {
+							document.getElementById("ip").innerHTML = data;
+						});
+				}
 
-		<p>
-			Click the button below do the display the file path of the file upload
-			button above (you must select a file first).
-		</p>
+				fetch("https://push-notifications-app.herokuapp.com/notif")
+					.then((response) => response.json())
+					.then((data) => {
+						document.getElementById("notifs").innerHTML = data;
+					});
+			</script>
+		</body>
+	</body>
+</html> -->
 
-		<button type="button" onclick="myFunction()">Share</button>
-		<p id="demo"></p>
-		<p>Open the following link in your other device web browser</p>
-		<p id="ip"></p>
-		<p id="notifs"></p>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="script-src 'self' 'unsafe-inline'"
+		/>
+		<link rel="stylesheet" href="css/all.min.css" />
+		<link rel="stylesheet" href="css/materialize.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>FileShare</title>
+	</head>
+	<body>
+		<div class="container center-align">
+			<h3><img src="./file-upload-solid.svg" /> FileShare</h3>
+			<p class="hero-over">Choose a file to share</p>
+
+			<div class="file-field input-field">
+				<div class="btn">
+					<span>Browse</span>
+					<input type="file" id="myFile" />
+				</div>
+
+				<div class="file-path-wrapper">
+					<input
+						type="text"
+						class="file-path validate"
+						placeholder="Upload file"
+					/>
+				</div>
+			</div>
+
+			<p class="note">
+				<strong>Note:</strong>
+				<em
+					>Both Devices must be connected to the same network (Same
+					WiFi/Hotspot)</em
+				>
+			</p>
+
+			<button class="btn black" onclick="myFunction()" id="share-button">
+				Share
+				<img src="./Radio-3.1s-71px.svg" />
+			</button>
+
+			<div class="card output">
+				<div class="card-content">
+					File Link : <span id="output-path">(No Internet Required)</span>
+				</div>
+			</div>
+			<p>Open the above Link your other device's web browser</p>
+		</div>
+		<div class="footer">
+			<img src="./bell-regular.svg" onclick="showNotifs()" />
+		</div>
 		<script>
 			function myFunction() {
 				var x = document.getElementById("myFile").files[0];
@@ -26,7 +116,10 @@
 				})
 					.then((response) => response.json())
 					.then((data) => {
-						document.getElementById("ip").innerHTML = data;
+						document.getElementById("output-path").innerHTML = data;
+					})
+					.then(() => {
+						document.getElementById("share-button").innerHTML = "Sharing";
 					});
 			}
 
