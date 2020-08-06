@@ -1,21 +1,24 @@
 {
-	"name": "imageshrink",
+	"name": "fileshare",
+	"productName": "File Share",
 	"version": "1.0.0",
-	"description": "",
+	"description": "File Sharing Desktop App",
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
-		"pack": "electron-packager . --all"
+		"package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=assets/fileshare-akg.icns --prune=true --out=release-builds",
+		"package-win": "electron-packager . FileShare --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/fileshare-akg.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"FileShare\"",
+		"package-linux": "electron-packager . FileShare --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/fileshare-akg-linux.png --prune=true --out=release-builds"
 	},
 	"author": "Aditya Krishna Gupta",
 	"license": "MIT",
 	"devDependencies": {
-		"electron": "^9.1.2"
+		"electron": "^9.1.2",
+		"electron-packager": "^15.0.0"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
-		"electron-packager": "^15.0.0",
 		"express": "^4.17.1",
 		"internal-ip": "^6.1.0"
 	}
