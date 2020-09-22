@@ -4,8 +4,9 @@ const server = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const internalIp = require("internal-ip");
-let mainWindow;
 const PORT = 4707;
+let mainWindow;
+
 server.use(bodyParser.json());
 server.use(cors());
 
@@ -70,3 +71,8 @@ server.get("/", (req, res) => {
 });
 
 server.listen(PORT);
+
+// var fp = require("find-free-port");
+// fp(4917, function (err, freePort) {
+// 	server.listen(freePort);
+// });

@@ -1,5 +1,6 @@
 function myFunction() {
 	var x = document.getElementById("myFile").files[0];
+	document.getElementById("filePath").value = x.path;
 	fetch("http://localhost:4707/fileupload", {
 		method: "post",
 		headers: { "Content-Type": "application/json" },
@@ -25,6 +26,14 @@ fetch("https://push-notifications-app.herokuapp.com/notif")
 			document.getElementById("notif-desc").innerHTML =
 				"There are no new notifications or you are not connected to internet. Use Ctrl+R to refresh.";
 		} else {
+			// var dot = document.createElement("span");
+			// var element = document.getElementsByClassName("footer");
+			// var notif = document.getElementById("notif-image");
+			// element.insertBefore(dot, notif);
+			// dot.setAttribute("id", "notif-dot");
+			// var notifDot = document.getElementById("notif-dot");
+			// console.log(notifDot);
+			// notifDot.classList.add("notif-dot");
 			document.getElementById("notif-heading").innerHTML = data.heading;
 			document.getElementById("notif-desc").innerHTML = data.notif;
 		}
