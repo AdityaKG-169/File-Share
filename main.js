@@ -66,7 +66,7 @@ server.post("/fileupload", async (req, res) => {
 	res.json(`${ip}:${PORT}/${file}`)
 });
 
-server.get("/", (req, res) => {
+server.get("/:filename", (req, res) => {
 	res.download(file);
 });
 
