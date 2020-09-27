@@ -63,7 +63,7 @@ let file = "";
 server.post("/fileupload", async (req, res) => {
 	file = req.body.filePath;
 	const ip = await internalIp.v4();
-	res.json(ip + ":" + PORT);
+	res.json(`${ip}:${PORT}/${file}`)
 });
 
 server.get("/", (req, res) => {
