@@ -8,4 +8,4 @@ With this File Share Desktop app, one can share files between the system on the 
 1. Clone this repository
 2. Open the folder in terminal
 3. npm install
-4. electron .
+4. npm start
