@@ -16,7 +16,8 @@ With this File Share Desktop app, one can share files between the system on the 
 
 ## To Run the code on Local Machine
 
-1. Clone this repository
-2. Open the folder in terminal
-3. npm install
-4. npm start
+```javascript
+git clone https://github.com/AdityaKG-169/FileShare
+cd FileShare
+npm i && npm start
+```
