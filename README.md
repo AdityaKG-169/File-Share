@@ -3,6 +3,10 @@
 ![Electronjs](https://img.shields.io/badge/-Electronjs-47848f?style=flat-square&logo=electron&logoColor=white)
 ![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=flat-square&logo=Node.js&logoColor=white)
 
+### Table of Contents  
+- [Introduction](https://github.com/AdityaKG-169/File-Share#introduction)
+- [Installation](https://github.com/AdityaKG-169/File-Share#installation)
+
 ## Introduction
 Sharing Files is a very simple task, but with all the apps containing advertisements, complex functionality and slow transfer speed, it becomes so cluttered and difficult to do this simple task.
 With this File Share Desktop app, one can share files between the system on the go. You don't have to go through any signins or pop-ups, just run and share!
@@ -18,7 +22,7 @@ With this File Share Desktop app, one can share files between the system on the 
   <li>Application Size: <b>68mb</b></li>
 </ul>
 
-## To Run the code on Local Machine
+## Installation
 
 ```javascript
 git clone https://github.com/AdityaKG-169/File-Share
