@@ -35,7 +35,7 @@ cd File-Share
 
 - Install the required dependencies and start the server in dev mode:
 ```javascript
-npm i && npm run dev
+npm i && npm start
 ```
 
 **Note:**
