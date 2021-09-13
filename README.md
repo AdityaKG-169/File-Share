@@ -24,10 +24,22 @@ With this File Share Desktop app, one can share files between the system on the 
 
 ## Installation
 
+- Clone the git repository using the below code snippet:
 ```javascript
 git clone https://github.com/AdityaKG-169/File-Share
-cd File-Share
-npm i && npm start
 ```
+- Change your current working directory to the project folder:
+```javascript
+cd File-Share
+```
+
+- Install the required dependencies and start the server in dev mode:
+```javascript
+npm i && npm run dev
+```
+
+**Note:**
+You must have **_NodeJs_, _npm_** installed in your system in order to run the project properly
+
 
 ### Contributions are Welcome :heart:
