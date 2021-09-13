@@ -1,6 +1,7 @@
 # File Share Desktop Application
 
-![](https://img.shields.io/badge/Electron-JS-green) ![](https://img.shields.io/badge/Node-JS-blue)
+![Electronjs](https://img.shields.io/badge/-Electronjs-47848f?style=flat-square&logo=electron&logoColor=white)
+![Nodejs](https://img.shields.io/badge/-Nodejs-339933?style=flat-square&logo=Node.js&logoColor=white)
 
 ## Introduction
 Sharing Files is a very simple task, but with all the apps containing advertisements, complex functionality and slow transfer speed, it becomes so cluttered and difficult to do this simple task.
